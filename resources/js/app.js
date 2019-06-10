@@ -27,6 +27,11 @@ const router = new VueRouter({
             path: '/roster',
             name: 'roster',
             component: Roster
+        },
+        {
+            path: '/forum',
+            name: 'forum',
+            beforeEnter() { location.href = 'https://www.thefallen-guild.com/forum/index.php' }
         }
     ]
 });

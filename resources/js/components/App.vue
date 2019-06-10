@@ -28,7 +28,7 @@
                                     <span class="nav-link"><router-link :to="{ name: 'roster' }">Roster</router-link></span>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Forum</a>
+                                    <span class="nav-link"><router-link :to="{ name: 'forum' }">Forum</router-link></span>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Vidéos</a>

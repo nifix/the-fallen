@@ -37140,13 +37140,26 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "span",
+                      { staticClass: "nav-link" },
+                      [
+                        _c(
+                          "router-link",
+                          { attrs: { to: { name: "forum" } } },
+                          [_vm._v("Forum")]
+                        )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
                   _vm._m(2),
                   _vm._v(" "),
                   _vm._m(3),
                   _vm._v(" "),
-                  _vm._m(4),
-                  _vm._v(" "),
-                  _vm._m(5)
+                  _vm._m(4)
                 ])
               ]
             )
@@ -37218,16 +37231,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-        _vm._v("Forum")
-      ])
-    ])
   },
   function() {
     var _vm = this
@@ -52170,6 +52173,12 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     path: '/roster',
     name: 'roster',
     component: _components_Roster__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    path: '/forum',
+    name: 'forum',
+    beforeEnter: function beforeEnter() {
+      location.href = 'https://www.thefallen-guild.com/forum/index.php';
+    }
   }]
 });
 /**
