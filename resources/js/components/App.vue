@@ -46,16 +46,30 @@
             </div>
 
             <div class="container">
-                <div class="row mt-4">
-                    <transition name="fade">
-                        <router-view></router-view>
-                    </transition>
+                <div class="wrapper-content mt-4">
+                    <div class="row">
+                        <div class="recruiting-block col-md-3">
+                            <RecruitingBlock />
+                        </div>
+                        <div class="main-content-block col-md-9">
+                            <transition name="fade">
+                                <router-view></router-view>
+                            </transition>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <RaiderioBlock />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+    import { RecruitingBlock } from './partials/RecruitingBlock.vue';
+
     export default {
         data() {
             return {

@@ -51,6 +51,11 @@ const router = new VueRouter({
 Vue.component('App', require('./components/App.vue').default);
 Vue.component('Home', require('./components/Home.vue').default);
 Vue.component('Roster', require('./components/Roster.vue').default);
+
+// Blocks
+Vue.component('RecruitingBlock', require('./components/partials/RecruitingBlock.vue').default);
+Vue.component('RaiderioBlock', require('./components/partials/RaiderioBlock.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
