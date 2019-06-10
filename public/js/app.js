@@ -37101,7 +37101,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-lg-12" }, [
-          _c("nav", { staticClass: "navbar navbar-expand-lg navbar-custom" }, [
+          _c("nav", { staticClass: "navbar navbar-expand-sm navbar-custom" }, [
             _vm._m(1),
             _vm._v(" "),
             _c(
