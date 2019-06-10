@@ -1,0 +1,115 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+$responsive-xs: 576px;
+$responsive-md: 992px;
+$responsive-lg: 1200px;
+$responsive-xl: 2560px;
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url('../img/tf-bg-bfa.jpg');
+    background-repeat: no-repeat;
+    background-position: center -1px;
+    background-color: #000;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 12px;
+    line-height: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #DDD;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#header-guild-name {
+    text-shadow: 1px 1px #3d3636;
+    font-family: Rajdhani;
+    letter-spacing: 6px;
+    text-align:right;
+    padding-right:15px;
+
+    @media screen and (max-width: $responsive-xs) {
+        font-size:15px;
+    }
+
+    @media screen and (max-width: $responsive-xl) {
+        font-weight: bolder;
+        font-size:40px;
+    }
+}
+
+#header-logo {
+     background: url('../img/tf_white_logo.png');
+     background-repeat: no-repeat;
+     width:287px;
+     height:200px;
+
+     @media screen and (max-width: $responsive-xs) {
+        display:none;
+    }
+}
+
+#header-guild-subtext {
+    font-size:17px;
+    letter-spacing: 4px;
+    font-weight: 100;
+}
+
+
+
+.navbar-custom {
+    background-color: rgba(39, 30, 30, 0.432);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #000000;
+    width:100%;
+    font-family: Quicksand;
+    font-size: 15px;
+    height:35px;
+}
+
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px #209ce4;
+
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgb(253, 253, 253);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:visited .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff !important;
+}
+
+a {
+    color: rgb(255, 255, 255);
+}
+a:hover {
+    color:#b6b6b6;
+    text-shadow: 1px 1px #ffffff;
+    text-decoration: none;
+}
