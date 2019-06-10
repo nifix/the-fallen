@@ -1771,7 +1771,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      isLoading: false
+    };
+  }
+});
 
 /***/ }),
 
@@ -37085,78 +37096,80 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      { staticClass: "container" },
-      [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12" }, [
+    _c("div", { staticClass: "container" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("nav", { staticClass: "navbar navbar-expand-lg navbar-custom" }, [
+            _vm._m(1),
+            _vm._v(" "),
             _c(
-              "nav",
-              { staticClass: "navbar navbar-expand-lg navbar-custom" },
+              "div",
+              {
+                staticClass: "collapse navbar-collapse justify-content-center",
+                attrs: { id: "navbarNav" }
+              },
               [
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "collapse navbar-collapse justify-content-center",
-                    attrs: { id: "navbarNav" }
-                  },
-                  [
-                    _c("ul", { staticClass: "navbar-nav" }, [
-                      _c("li", { staticClass: "nav-item" }, [
+                _c("ul", { staticClass: "navbar-nav" }, [
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "span",
+                      { staticClass: "nav-link" },
+                      [
+                        _c("router-link", { attrs: { to: { name: "home" } } }, [
+                          _vm._v("Home")
+                        ])
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "span",
+                      { staticClass: "nav-link" },
+                      [
                         _c(
-                          "span",
-                          { staticClass: "nav-link" },
-                          [
-                            _c(
-                              "router-link",
-                              { attrs: { to: { name: "home" } } },
-                              [_vm._v("Home")]
-                            )
-                          ],
-                          1
+                          "router-link",
+                          { attrs: { to: { name: "roster" } } },
+                          [_vm._v("Roster")]
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "nav-item" }, [
-                        _c(
-                          "span",
-                          { staticClass: "nav-link" },
-                          [
-                            _c(
-                              "router-link",
-                              { attrs: { to: { name: "roster" } } },
-                              [_vm._v("Roster")]
-                            )
-                          ],
-                          1
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(2),
-                      _vm._v(" "),
-                      _vm._m(3),
-                      _vm._v(" "),
-                      _vm._m(4),
-                      _vm._v(" "),
-                      _vm._m(5)
-                    ])
-                  ]
-                )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _vm._m(5)
+                ])
               ]
             )
           ])
-        ]),
-        _vm._v(" "),
-        _c("router-view")
-      ],
-      1
-    )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "div",
+          { staticClass: "row mt-4" },
+          [
+            _c(
+              "transition",
+              { attrs: { name: "fade" } },
+              [_c("router-view")],
+              1
+            )
+          ],
+          1
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
