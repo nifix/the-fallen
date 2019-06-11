@@ -48,19 +48,22 @@
             <div class="container">
                 <div class="wrapper-content mt-4">
                     <div class="row">
-                        <div class="recruiting-block col-md-3">
+                        <!-- <div class="recruiting-block col-md-3">
                             <RecruitingBlock />
-                        </div>
-                        <div class="main-content-block col-md-9">
+                        </div> -->
+                        <aside class="col-md-3">
+                            <RecruitingBlock />
+                        </aside>
+                        <article class="main-content-block col-md-9">
                             <transition name="fade">
                                 <router-view></router-view>
                             </transition>
-                        </div>
+                        </article>
                     </div>
                     <div class="row">
-                        <div class="col-md-3">
+                        <aside class="col-md-3">
                             <RaiderioBlock />
-                        </div>
+                        </aside>
                     </div>
                 </div>
             </div>

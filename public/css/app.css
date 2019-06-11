@@ -10712,7 +10712,7 @@ body {
 
 .navbar-custom {
   background-color: rgba(39, 30, 30, 0.432);
-  background: linear-gradient(to right, rgba(39, 30, 30, 0.199), #271e1e, #271e1e, #271e1e, rgba(39, 30, 30, 0.199));
+  background: linear-gradient(to right, rgba(39, 30, 30, 0.199), #271e1e, #271e1e, rgba(39, 30, 30, 0.199));
   color: #000000;
   width: 100%;
   font-family: Quicksand;
