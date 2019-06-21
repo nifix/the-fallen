@@ -1933,6 +1933,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1972,6 +1974,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -1982,7 +1986,88 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      playerDatas: null,
+      charList: null,
+      orderList: [{
+        id: 6,
+        className: "Death Knight"
+      }, {
+        id: 12,
+        className: "Demon Hunter"
+      }, {
+        id: 11,
+        className: "Druid"
+      }, {
+        id: 3,
+        className: "Hunter"
+      }, {
+        id: 8,
+        className: "Mage"
+      }, {
+        id: 10,
+        className: "Monk"
+      }, {
+        id: 2,
+        className: "Paladin"
+      }, {
+        id: 5,
+        className: "Priest"
+      }, {
+        id: 4,
+        className: "Rogue"
+      }, {
+        id: 7,
+        className: "Shaman"
+      }, {
+        id: 9,
+        className: "Warlock"
+      }, {
+        id: 1,
+        className: "Warrior"
+      }]
+    };
+  },
+  methods: {
+    getPlayerData: function getPlayerData() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://127.0.0.1:8000/api/get-roster').then(function (response) {
+        var allowedRanks = [0, 1, 3, 4, 5];
+        _this.playerDatas = response.data.members;
+        _this.charList = Object.entries(_this.playerDatas);
+      })["catch"](function (response) {
+        console.log(response);
+      });
+    },
+    getCharByClass: function getCharByClass(classId) {
+      return this.charList.filter(function (c) {
+        if (c[1].character["class"] == classId) {
+          return c[1].character.name;
+        }
+      });
+    }
+  },
+  computed: {},
+  created: function created() {
+    this.getPlayerData();
+    console.log(Object.entries(this.orderList));
+  }
+});
 
 /***/ }),
 
@@ -2022,7 +2107,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      rioData: "N/A"
+      rioData: null
     };
   },
   methods: {
@@ -37343,106 +37428,95 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12" }, [
-          _c("nav", { staticClass: "navbar navbar-expand-sm navbar-custom" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse justify-content-center",
-                attrs: { id: "navbarNav" }
-              },
-              [
-                _c("ul", { staticClass: "navbar-nav" }, [
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "span",
-                      { staticClass: "nav-link" },
-                      [
-                        _c("router-link", { attrs: { to: { name: "home" } } }, [
-                          _vm._v("Home")
-                        ])
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "span",
-                      { staticClass: "nav-link" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "roster" } } },
-                          [_vm._v("Roster")]
-                        )
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "span",
-                      { staticClass: "nav-link" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "forum" } } },
-                          [_vm._v("Forum")]
-                        )
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(2),
-                  _vm._v(" "),
-                  _vm._m(3),
-                  _vm._v(" "),
-                  _vm._m(4)
-                ])
-              ]
-            )
-          ])
+  return _c("div", { staticClass: "container-fluid" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12" }, [
+        _c("nav", { staticClass: "navbar navbar-expand-sm navbar-custom" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse navbar-collapse justify-content-center",
+              attrs: { id: "navbarNav" }
+            },
+            [
+              _c("ul", { staticClass: "navbar-nav" }, [
+                _c("li", { staticClass: "nav-item" }, [
+                  _c(
+                    "span",
+                    { staticClass: "nav-link" },
+                    [
+                      _c("router-link", { attrs: { to: { name: "home" } } }, [
+                        _vm._v("Home")
+                      ])
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _c(
+                    "span",
+                    { staticClass: "nav-link" },
+                    [
+                      _c("router-link", { attrs: { to: { name: "roster" } } }, [
+                        _vm._v("Roster")
+                      ])
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _c(
+                    "span",
+                    { staticClass: "nav-link" },
+                    [
+                      _c("router-link", { attrs: { to: { name: "forum" } } }, [
+                        _vm._v("Forum")
+                      ])
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _vm._m(3),
+                _vm._v(" "),
+                _vm._m(4)
+              ])
+            ]
+          )
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "wrapper-content mt-4" }, [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "aside",
-              { staticClass: "col-md-3" },
-              [_c("RecruitingBlock")],
-              1
-            ),
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "wrapper-content mt-4" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-3 col-sm-5 mt-0" }, [
+            _c("aside", [_c("RecruitingBlock")], 1),
             _vm._v(" "),
-            _c(
-              "section",
-              { staticClass: "main-content-block col-md-9" },
-              [
-                _c(
-                  "transition",
-                  { attrs: { name: "fade" } },
-                  [_c("router-view")],
-                  1
-                )
-              ],
-              1
-            )
+            _c("aside", [_c("RaiderioBlock")], 1)
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("aside", { staticClass: "col-md-3" }, [_c("RaiderioBlock")], 1)
-          ])
+          _c(
+            "article",
+            { staticClass: "main-content-block col-sm-7 col-md-9" },
+            [
+              _c(
+                "transition",
+                { attrs: { name: "fade" } },
+                [_c("router-view")],
+                1
+              )
+            ],
+            1
+          )
         ])
       ])
     ])
@@ -37571,7 +37645,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n\n    Roster page\n\n")])
+  return _vm.playerDatas != null
+    ? _c(
+        "div",
+        _vm._l(Object.entries(_vm.orderList), function(classInfo) {
+          return _c(
+            "div",
+            { key: classInfo[1].id },
+            [
+              _vm._v(
+                "\n        " + _vm._s(classInfo[1].className) + "\n        "
+              ),
+              _vm._l(_vm.getCharByClass(classInfo[1].id), function(char) {
+                return _c("div", { key: char[1].character.name }, [
+                  _c("li", [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(char[1].character.name) +
+                        "\n            "
+                    )
+                  ])
+                ])
+              })
+            ],
+            2
+          )
+        }),
+        0
+      )
+    : _c("div", { staticClass: "d-flex align-center" }, [
+        _vm._v("\n    Loading ....\n")
+      ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37599,19 +37703,31 @@ var render = function() {
     _c("div", { staticClass: "rio-wrapper" }, [
       _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "rio-data mt-3" }, [
-        _c("div", [
-          _c("p", [_vm._v("Battle of Dazar'alor")]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.rioData["battle-of-dazaralor"].summary))])
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("p", [_vm._v("Crucible of Storms")]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.rioData["crucible-of-storms"].summary))])
-        ])
-      ])
+      _vm.rioData != null
+        ? _c("div", { staticClass: "rio-data mt-3" }, [
+            _c("div", [
+              _c("p", [_vm._v("Battle of Dazar'alor")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(_vm._s(_vm.rioData["battle-of-dazaralor"].summary))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("p", [_vm._v("Crucible of Storms")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(_vm._s(_vm.rioData["crucible-of-storms"].summary))
+              ])
+            ]),
+            _vm._v(" "),
+            _vm.rioData == null
+              ? _c("div", { staticClass: "rio-data mt-3" }, [
+                  _vm._v("\n            Loading\n        ")
+                ])
+              : _vm._e()
+          ])
+        : _vm._e()
     ])
   ])
 }

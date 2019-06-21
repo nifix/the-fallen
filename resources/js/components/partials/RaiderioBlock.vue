@@ -1,9 +1,8 @@
 <template>
-
     <div class="mt-4">
         <div class="rio-wrapper">
             <div class="rio-header">Raider.IO - Progress<hr></div>
-            <div class="rio-data mt-3">
+            <div class="rio-data mt-3" v-if="rioData != null">
                 <div>
                     <p>Battle of Dazar'alor</p>
                     <p>{{ rioData["battle-of-dazaralor"].summary }}</p>
@@ -12,11 +11,12 @@
                     <p>Crucible of Storms</p>
                     <p>{{ rioData["crucible-of-storms"].summary }}</p>
                 </div>
-
+            <div class="rio-data mt-3" v-if="rioData == null">
+                Loading
+            </div>
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -25,7 +25,7 @@
     export default {
         data: () => {
             return {
-                rioData:"N/A"
+                rioData: null
             }
         },
         methods: {
