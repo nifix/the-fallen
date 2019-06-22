@@ -51,8 +51,8 @@
 
             <div class="container-fluid">
                 <div class="wrapper-content mt-4">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-5 mt-0">
+                    <div class="row pt-0">
+                        <div class="col-md-3 col-sm-5">
                             <aside>
                                 <RecruitingBlock />
                             </aside>
@@ -61,7 +61,7 @@
                             </aside>
                         </div>
 
-                        <article class="main-content-block col-sm-7 col-md-9">
+                        <article class="main-content-block col-sm-7 col-md-9 mt-2">
                             <transition name="fade">
                                 <router-view></router-view>
                             </transition>

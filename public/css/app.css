@@ -10773,8 +10773,13 @@ a:hover {
   border-radius: 3px;
   border: 1px solid black;
   background-color: rgba(34, 34, 34, 0.795);
-  padding: 20px;
-  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+td {
+  background-color: #272727;
 }
 
 .rio-header {
@@ -10816,8 +10821,37 @@ hr {
 .recruit-wrapper .recruit-data p {
   font-size: 13px;
   text-align: left;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   line-height: 20px;
+}
+
+.roster-td-30 {
+  width: 30%;
+}
+
+.roster-td-20 {
+  width: 20%;
+}
+
+@media screen and (max-width: 576px) {
+  .roster-td-img {
+    width: 30%;
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .roster-td-img {
+    width: 15%;
+    height: 15%;
+  }
+}
+
+.roster-tr-title {
+  line-height: 1px;
+  min-height: 1px;
+  height: 1px;
+  background-color: rgba(222, 222, 222, 0);
 }
 

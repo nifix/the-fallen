@@ -1,8 +1,8 @@
 <template>
-    <div class="mt-4">
+    <div class="mt-2">
         <div class="recruit-wrapper">
             <div class="recruit-header">Recrutement<hr></div>
-                <div class="recruit-data mt-3">
+                <div class="recruit-data">
                     <div>
                         <p>DeathKnight</p>
                         <p>Priest</p>

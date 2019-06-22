@@ -1997,6 +1997,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2004,41 +2018,56 @@ __webpack_require__.r(__webpack_exports__);
       playerDatas: null,
       charList: null,
       orderList: [{
+        id: "id",
+        className: "Class Name"
+      }, {
         id: 6,
-        className: "Death Knight"
+        className: "Death Knight",
+        classColor: "#A330C9"
       }, {
         id: 12,
-        className: "Demon Hunter"
+        className: "Demon Hunter",
+        classColor: "#A330C9"
       }, {
         id: 11,
-        className: "Druid"
+        className: "Druid",
+        classColor: "#FF7D0A"
       }, {
         id: 3,
-        className: "Hunter"
+        className: "Hunter",
+        classColor: "#ABD473"
       }, {
         id: 8,
-        className: "Mage"
+        className: "Mage",
+        classColor: "#69CCF0"
       }, {
         id: 10,
-        className: "Monk"
+        className: "Monk",
+        classColor: "#00FFBA"
       }, {
         id: 2,
-        className: "Paladin"
+        className: "Paladin",
+        classColor: "#F58CBA"
       }, {
         id: 5,
-        className: "Priest"
+        className: "Priest",
+        classColor: "#FFFFFF"
       }, {
         id: 4,
-        className: "Rogue"
+        className: "Rogue",
+        classColor: "#FFF569"
       }, {
         id: 7,
-        className: "Shaman"
+        className: "Shaman",
+        classColor: "#0070DE"
       }, {
         id: 9,
-        className: "Warlock"
+        className: "Warlock",
+        classColor: "#9482C9"
       }, {
         id: 1,
-        className: "Warrior"
+        className: "Warrior",
+        classColor: "#C79C6E"
       }]
     };
   },
@@ -2057,15 +2086,17 @@ __webpack_require__.r(__webpack_exports__);
     getCharByClass: function getCharByClass(classId) {
       return this.charList.filter(function (c) {
         if (c[1].character["class"] == classId) {
-          return c[1].character.name;
+          return c;
+        } else {
+          return false;
         }
       });
     }
   },
-  computed: {},
   created: function created() {
-    this.getPlayerData();
-    console.log(Object.entries(this.orderList));
+    this.getPlayerData(); // console.log(Object.entries(this.orderList));
+
+    console.log(this.orderList[1].id);
   }
 });
 
@@ -37497,8 +37528,8 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "wrapper-content mt-4" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-3 col-sm-5 mt-0" }, [
+        _c("div", { staticClass: "row pt-0" }, [
+          _c("div", { staticClass: "col-md-3 col-sm-5" }, [
             _c("aside", [_c("RecruitingBlock")], 1),
             _vm._v(" "),
             _c("aside", [_c("RaiderioBlock")], 1)
@@ -37506,7 +37537,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "article",
-            { staticClass: "main-content-block col-sm-7 col-md-9" },
+            { staticClass: "main-content-block col-sm-7 col-md-9 mt-2" },
             [
               _c(
                 "transition",
@@ -37648,28 +37679,94 @@ var render = function() {
   return _vm.playerDatas != null
     ? _c(
         "div",
-        _vm._l(Object.entries(_vm.orderList), function(classInfo) {
-          return _c(
-            "div",
-            { key: classInfo[1].id },
-            [
-              _vm._v(
-                "\n        " + _vm._s(classInfo[1].className) + "\n        "
-              ),
-              _vm._l(_vm.getCharByClass(classInfo[1].id), function(char) {
-                return _c("div", { key: char[1].character.name }, [
-                  _c("li", [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(char[1].character.name) +
-                        "\n            "
-                    )
-                  ])
+        _vm._l(12, function(i) {
+          return _c("div", { key: i }, [
+            _vm.getCharByClass(_vm.orderList[i].id) != false
+              ? _c("div", [
+                  _c(
+                    "table",
+                    {
+                      staticClass: "table table-dark",
+                      staticStyle: {
+                        border: "1px solid  rgba(32, 32, 32, 0.719)"
+                      }
+                    },
+                    [
+                      _c("tr", { staticClass: "roster-tr-title" }, [
+                        _c(
+                          "td",
+                          {
+                            staticStyle: {
+                              "background-color": "rgba(222, 222, 222, 0)"
+                            },
+                            style: { color: _vm.orderList[i].classColor },
+                            attrs: { colspan: "4" }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  float: "right",
+                                  "font-size": "17px"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(_vm.orderList[i].className) +
+                                    "s - PH\n                        "
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.getCharByClass(_vm.orderList[i].id), function(
+                        char
+                      ) {
+                        return _c("tr", { key: char[1].character.name }, [
+                          _c(
+                            "td",
+                            {
+                              staticClass: "roster-td-30",
+                              style: { color: _vm.orderList[i].classColor }
+                            },
+                            [_vm._v(_vm._s(char[1].character.name))]
+                          ),
+                          _vm._v(" "),
+                          char[1].character.spec != undefined
+                            ? _c("td", { staticClass: "roster-td-20" }, [
+                                _vm._v(
+                                  "\n                        " +
+                                    _vm._s(char[1].character.race) +
+                                    " " +
+                                    _vm._s(char[1].character.spec.role) +
+                                    "\n                    "
+                                )
+                              ])
+                            : _c("td", { staticClass: "roster-td-20" }, [
+                                _vm._v(
+                                  "\n                        N/A\n                    "
+                                )
+                              ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "roster-td-20" }, [
+                            _vm._v(_vm._s(char[1].rank))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "roster-td-20" }, [
+                            _vm._v("ArmoryLinky")
+                          ])
+                        ])
+                      })
+                    ],
+                    2
+                  )
                 ])
-              })
-            ],
-            2
-          )
+              : _vm._e()
+          ])
         }),
         0
       )
@@ -37770,14 +37867,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-4" }, [
+    return _c("div", { staticClass: "mt-2" }, [
       _c("div", { staticClass: "recruit-wrapper" }, [
         _c("div", { staticClass: "recruit-header" }, [
           _vm._v("Recrutement"),
           _c("hr")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "recruit-data mt-3" }, [
+        _c("div", { staticClass: "recruit-data" }, [
           _c("div", [
             _c("p", [_vm._v("DeathKnight")]),
             _vm._v(" "),
